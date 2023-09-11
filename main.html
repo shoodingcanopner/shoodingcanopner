@@ -1,0 +1,163 @@
+- 👋 Hi, I’m @shoodingcanopner
+- 👀 I’m interested in ...
+- 🌱 I’m currently learning ...
+- 💞️ I’m looking to collaborate on ...
+- 📫 How to reach me ...
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DNA 메일 서명 생성기</title>
+	<style type="text/css">
+		table {
+			border-collapse: separate;
+			width: 100%;
+		}
+		th, td {
+			text-align: center;
+			padding: 8px;
+		}
+		th {
+			background-color: #f2f2f2;
+		}
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+	</style>
+	<script type="text/javascript">
+		function copyToClipboard(text) {
+			var dummy = document.createElement("textarea");
+			document.body.appendChild(dummy);
+			dummy.value = text;
+			dummy.select();
+			document.execCommand("copy");
+			document.body.removeChild(dummy);
+            alert("생성 완료");
+		}
+	</script>
+</head>
+<body>
+  <h1>DNA 메일 서명 생성기</h1>
+	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="검색...">
+  <button onclick="
+	var names = document.getElementsByName('name');
+	var code = '';
+	for (var i = 0; i < names.length; i++) {
+	if (names[i].checked) {
+	code += '<img src=\'https\:\/\/raw.githubusercontent.com/ogimi43/dnasig/main/' + names[i].value + '.jpg\' alt=\'' + names[i].value + '\' width=\'350\' height=\'150\'>';
+}
+}
+copyToClipboard(code);
+">생성</button>
+<div style="width:100%; height:500px;overflow:auto">
+	<table id="myTable">
+		<thead>
+			<tr>
+				<th>선택</th>
+				<th>이름</th>
+        <th>학번</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><input type="checkbox" name="name" value="231"></td>
+				<td>김수빈</td>
+        <td>23</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="232"></td>
+				<td>권대현</td>
+        <td>23</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="233"></td>
+				<td>이채원</td>
+        <td>23</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="234"></td>
+				<td>한주은</td>
+        <td>23</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="235"></td>
+				<td>추유진</td>
+        <td>23</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="221"></td>
+				<td>김오민</td>
+        <td>22</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="222"></td>
+				<td>심수안</td>
+        <td>22</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="223"></td>
+				<td>신상은</td>
+        <td>22</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="224"></td>
+				<td>김선민</td>
+        <td>22</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="225"></td>
+				<td>김신지</td>
+        <td>22</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="211"></td>
+				<td>서휘</td>
+        <td>21</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="212"></td>
+				<td>박재영</td>
+        <td>21</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="213"></td>
+				<td>이승희</td>
+        <td>21</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="201"></td>
+				<td>손혜림</td>
+        <td>20</td>
+			</tr>
+      <tr>
+				<td><input type="checkbox" name="name" value="191"></td>
+				<td>강광휘</td>
+        <td>19</td>
+			</tr>
+    </tbody>
+
+    </table>
+    </div>
+    <br>
+
+
+    <script type="text/javascript">
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
